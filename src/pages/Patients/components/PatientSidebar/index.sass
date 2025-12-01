@@ -1,0 +1,47 @@
+.patient-sidebar
+    width: 367px
+    .patient-container
+        background-color: white
+        border-radius: 16px
+        padding: 20px
+        .patient-sidebar-top
+            display: flex
+            justify-content: space-between
+            align-items: center
+            flex-wrap: wrap
+            h2
+                font-weight: 800
+            .search-icon
+                &:hover
+                    cursor: pointer
+            .patient-search-bar
+                flex-basis: 100%
+                display: flex
+                input
+                    width: 100%
+                    border: 1px solid #D3D3D3
+                    border-radius: 8px
+                    padding: 8px 12px
+                    
+    .patient-list
+        padding: 20px 0px
+        .patient-item
+            padding-bottom: 32px
+            &:nth-last-child(1)
+                padding-bottom: 0px
+            .single-patient-container
+                display: flex
+                .single-patient-info
+                    display: flex
+                    .single-patient-text-info
+                        padding-left: 12px
+                        h3
+                            margin: 0px
+                            font-weight: 600
+                            font-size: 14px
+                        .patient-details
+                            display: flex
+                            p
+                                margin: 4px 0px 0px 0px 
+                                color: #707070
+                                font-size: 14px
