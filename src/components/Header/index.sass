@@ -1,0 +1,116 @@
+$active-color: #01F0D0
+$text-color: #072635
+$light-gray: #f5f5f5
+$dark-gray: #072635
+
+@keyframes spin
+	from
+		transform: rotate(0deg)
+	to
+		transform: rotate(360deg)
+
+.header-bar
+	display: flex
+	align-items: center
+	justify-content: space-between
+	height: 72px
+	padding: 0 32px
+	background-color: white
+	border-radius: 70px
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05)
+
+	.logo-section
+		display: flex
+		align-items: center
+		gap: 8px
+		
+		.logo-image
+			width: 210px
+			height: 48px
+		
+		.logo-text
+			font-size: 24px
+			font-weight: 700
+			color: $text-color
+
+	.nav-tabs
+		display: flex
+		align-items: center
+		height: 100% 
+		
+		.nav-item
+			display: flex
+			align-items: center
+			padding: 10px 20px
+			cursor: pointer
+			transition: background-color 0.2s, color 0.2s
+			border-radius: 41px
+
+			.nav-icon
+				width: 20px
+				height: 20px
+				margin-right: 8px
+			
+			.nav-label
+				font-size: 14px
+				font-weight: 600
+				color: $dark-gray
+
+			&:hover:not(.nav-item--active)
+				background-color: $light-gray 
+
+			&--active
+				background-color: $active-color
+				
+				.nav-label
+					color: $text-color 
+
+	.user-controls
+		display: flex
+		align-items: center
+		gap: 15px
+		
+
+		.profile-info
+			display: flex
+			align-items: center
+			gap: 10px
+			border-right: 1px solid #EDEDED
+			padding-right: 20px
+			
+			.profile-picture
+				width: 44px
+				height: 44px
+				border-radius: 50%
+				object-fit: cover
+
+			.text-group
+				display: flex
+				flex-direction: column
+				
+				.profile-name
+					font-size: 14px
+					font-weight: 600
+					color: $text-color
+					line-height: 1.2
+					
+				.profile-title
+					font-size: 14px
+					color: $dark-gray
+
+		.settings-cog
+			padding: 5px
+			cursor: pointer
+			
+			.cog-icon
+				width: 24px
+				height: 24px
+				&:hover
+					animation: spin 1s linear infinite 
+
+		.more-options
+			cursor: pointer
+			padding: 5px
+			.ellipsis
+				.dot
+					background-color: $dark-gray

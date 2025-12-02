@@ -1,0 +1,90 @@
+$color-navy: #072635
+$color-teal: #01F0D0
+$color-grey-bg: #F6F7F8
+
+.patient-details-widget
+	background-color: white
+	border-radius: 16px
+	padding: 32px 20px
+	width: 367px
+	max-width: 350px 
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05)
+	box-sizing: border-box
+
+	.widget-header
+		display: flex
+		flex-direction: column
+		align-items: center
+		margin-bottom: 32px
+
+		.profile-picture
+			width: 200px
+			border-radius: 50%
+			margin-bottom: 24px
+		.patient-name
+			font-size: 24px
+			font-weight: 700
+			color: $color-navy
+			margin: 0
+			text-align: center
+
+	.details-list
+		display: flex
+		flex-direction: column
+		gap: 24px
+		margin-bottom: 40px
+
+		.detail-item
+			display: flex
+			align-items: center
+			gap: 16px
+
+			.icon-container
+				width: 42px
+				height: 42px
+				background-color: $color-grey-bg
+				border-radius: 50%
+				display: flex
+				align-items: center
+				justify-content: center
+				flex-shrink: 0
+
+				img
+					width: 42px
+					height: 42px
+					object-fit: contain
+
+			.detail-info
+				display: flex
+				flex-direction: column
+
+				.detail-label
+					font-size: 14px
+					color: $color-navy
+					margin: 0 0 4px 0
+					font-weight: 500
+					text-transform: capitalize
+
+				.detail-value
+					font-size: 14px
+					color: $color-navy
+					font-weight: 700
+					margin: 0
+
+	.widget-footer
+		display: flex
+		justify-content: center
+
+		.show-info-btn
+			background-color: $color-teal
+			color: $color-navy
+			border: none
+			border-radius: 40px
+			padding: 12px 32px
+			font-size: 14px
+			font-weight: 700
+			cursor: pointer
+			transition: opacity 0.2s
+			width: 220px
+			&:hover
+				opacity: 0.9

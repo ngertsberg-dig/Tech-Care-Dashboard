@@ -3,20 +3,24 @@
     .patient-container
         background-color: white
         border-radius: 16px
-        padding: 20px
         .patient-sidebar-top
             display: flex
             justify-content: space-between
             align-items: center
+            padding: 20px
+            padding-bottom: 0px
             flex-wrap: wrap
             h2
                 font-weight: 800
+                margin: 0px
+                color: #072635
             .search-icon
                 &:hover
                     cursor: pointer
             .patient-search-bar
                 flex-basis: 100%
                 display: flex
+                margin-top: 12px
                 input
                     width: 100%
                     border: 1px solid #D3D3D3
@@ -26,11 +30,24 @@
     .patient-list
         padding: 20px 0px
         .patient-item
-            padding-bottom: 32px
+            padding: 16px 0px
+
+            &:hover:not(.selected)
+                background-color: #F5F5F5
+                cursor: pointer
+            &.selected
+                background-color: #d8fcf7
+                cursor: pointer
             &:nth-last-child(1)
                 padding-bottom: 0px
             .single-patient-container
                 display: flex
+                flex-basis: 100%
+                padding: 0px 20px
+                justify-content: space-between
+                .patient-ellipsis
+                    display: flex
+                    align-items: center
                 .single-patient-info
                     display: flex
                     .single-patient-text-info

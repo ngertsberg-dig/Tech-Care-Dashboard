@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 const usePatients = () => {
 	const [patients, setPatients] = useState([]);
+	const [selectedPatient, setSelectedPatient] = useState(null);
 
 	useEffect(() => {
 		const loadPatients = async () => {
@@ -9,6 +10,12 @@ const usePatients = () => {
 		};
 		loadPatients();
 	}, []);
+
+	useEffect(() => {
+		if (patients.length) {
+			setSelectedPatient(patients.find((patient) => patient.name === 'Jessica Taylor'));
+		}
+	}, [patients]);
 
 	const fetchPatients = async () => {
 		try {
@@ -24,7 +31,7 @@ const usePatients = () => {
 			});
 
 			const body = await res.json();
-			setPatients(body);
+			setPatients(body.map((patient, id) => ({ ...patient, id: id + 1 })));
 		} catch (error) {
 			console.log(error);
 		}
@@ -58,6 +65,8 @@ const usePatients = () => {
 		filterPatients,
 		patients,
 		getAge,
+		setSelectedPatient,
+		selectedPatient,
 	};
 };
 

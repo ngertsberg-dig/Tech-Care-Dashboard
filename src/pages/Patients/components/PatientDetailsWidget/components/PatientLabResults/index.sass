@@ -1,0 +1,62 @@
+
+.results-list
+    max-height: 350px 
+    overflow-y: auto
+    scrollbar-width: thin
+    scrollbar-color: #888 #f1f1f1
+    background-color: white
+    border-radius: 16px
+    scrollbar-color: #072635 #f1f1f1
+    .results-container
+        margin: 20px
+    h2
+        color: #072635
+        margin: 0px
+    &::-webkit-scrollbar
+        width: 8px
+        background-color: #072635
+
+    &::-webkit-scrollbar-track
+        background: #072635
+
+    &::-webkit-scrollbar-thumb
+        background-color: #072635
+        border-radius: 10px
+
+    .result-item
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 12px 15px
+        cursor: pointer
+        transition: background-color 0.2s
+        position: relative 
+        color: #072635
+        &.is-selected
+            background-color: #e6f7ff 
+            font-weight: 600
+
+            &:before
+                content: ""
+                position: absolute
+                left: 0
+                top: 0
+                bottom: 0
+                width: 4px
+                background-color: #1890ff 
+
+        &:hover:not(.is-selected)
+            background-color: #f7f7f7
+
+        .result-name
+            font-size: 14px
+
+        .download-icon
+            font-size: 16px
+            color: #555
+            padding: 5px
+            border-radius: 50%
+            transition: color 0.2s
+
+            &:hover
+                color: #1890ff

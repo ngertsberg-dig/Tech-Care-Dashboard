@@ -1,0 +1,112 @@
+$bg-purple: #F4F0FE
+$line-pink: #C26EB4
+$line-purple: #7E6CAB
+$text-dark: #072635
+$text-light: #707070
+$white: #FFFFFF
+
+.diagnosis-history
+  background-color: $white
+  border-radius: 16px
+  padding: 20px
+  font-family: 'Manrope', sans-serif 
+  
+  .section-title
+    font-size: 24px
+    font-weight: 800
+    color: $text-dark
+    margin-bottom: 40px
+    margin-top: 0
+
+  .chart-container
+    background-color: $bg-purple
+    border-radius: 12px
+    padding: 16px
+    display: flex
+    flex-direction: row
+    gap: 20px
+    
+  
+    .chart-main
+      flex: 2 
+      display: flex
+      flex-direction: column
+
+      .chart-header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 20px
+
+        h3
+          margin: 0
+          font-size: 18px
+          color: $text-dark
+        
+        .timeframe-selector
+          display: flex
+          align-items: center
+          color: $text-dark
+          font-size: 14px
+          cursor: pointer
+          background: transparent
+          border: none
+          img
+            margin-left: 26px
+          
+      .chart-wrapper
+        height: 250px // Fixed height for the chart
+        width: 100%
+
+    // Right Side: Stats Area
+    .chart-summary
+      flex: 1 // Takes up remaining width
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      padding-left: 10px
+
+      .divider
+        border: 0
+        border-top: 1px solid #CBC8D4
+        margin: 15px 0
+        width: 100%
+
+      .stat-group
+        display: flex
+        flex-direction: column
+        gap: 8px
+
+        .stat-header
+          display: flex
+          align-items: center
+          gap: 8px
+          
+          .stat-label
+            font-size: 14px
+            font-weight: bold
+            color: $text-dark
+
+          .dot
+            width: 14px
+            height: 14px
+            border-radius: 50%
+            
+          .systolic-dot
+            background-color: $line-pink
+            
+          .diastolic-dot
+            background-color: $line-purple
+
+        .stat-value
+          font-size: 22px
+          font-weight: bold
+          color: $text-dark
+        
+        .stat-status
+          font-size: 14px
+          color: $text-dark
+          display: flex
+          align-items: center
+          gap: 6px
+          

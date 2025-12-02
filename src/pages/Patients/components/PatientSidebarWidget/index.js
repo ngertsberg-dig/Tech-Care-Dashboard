@@ -1,6 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
+import Ellipsis from '../../../../components/shared/Ellipsis';
 import './index.sass';
-const PatientSidebar = ({ patients, getAge, filterPatients }) => {
+const PatientSidebar = ({
+	patients,
+	getAge,
+	filterPatients,
+	setSelectedPatient,
+	selectedPatient,
+}) => {
 	const [searchBarActive, setSearchBarActive] = useState(false);
 	const [filteredPatients, setFilteredPatients] = useState(patients);
 	const inputRef = useRef(null);
@@ -44,7 +51,13 @@ const PatientSidebar = ({ patients, getAge, filterPatients }) => {
 				</div>
 				<div className="patient-list">
 					{filteredPatients?.map((patient, index) => (
-						<div key={index} className="patient-item">
+						<div
+							key={patient.id}
+							className={`patient-item ${
+								selectedPatient?.id === patient.id ? 'selected' : ''
+							}`}
+							onClick={() => setSelectedPatient(patient)}
+						>
 							<div className="single-patient-container">
 								<div class="single-patient-info">
 									<div className="single-patient-avatar">
@@ -63,6 +76,9 @@ const PatientSidebar = ({ patients, getAge, filterPatients }) => {
 											</p>
 										</div>
 									</div>
+								</div>
+								<div className="patient-ellipsis">
+									<Ellipsis direction="horizontal" />
 								</div>
 							</div>
 						</div>

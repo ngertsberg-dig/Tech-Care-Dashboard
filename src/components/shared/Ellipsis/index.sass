@@ -1,0 +1,20 @@
+.ellipsis
+	display: flex
+	
+	.dot
+		width: 4px
+		height: 4px
+		background-color: #333
+		border-radius: 50%
+		margin: 0 1px 
+		
+	&--horizontal
+		flex-direction: row
+		align-items: center
+	
+	&--vertical
+		flex-direction: column
+		justify-content: center
+		
+		.dot
+			margin: 1px 0
