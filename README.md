@@ -1,4 +1,4 @@
-### quick react dashboard creation from adobeXD file for take home test for a healthcare company
+##### React-based dashboard from an Adobe XD design as part of a healthcare company’s take-home assessment.
 
 ![Dashboard Screenshot](public/images/dashboard.png)
 
